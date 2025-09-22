@@ -1,36 +1,36 @@
-# Faça um consultor de notas de uma escola e por base no nome do aluno,
-# Retorne a nota e diga se está aprovado, reprovado ou em recuperação!
+# Code a Grade Consultant for any student's name and grade!
+# Return the grade and say if student's is approved, is in recovery or rejected!
 
 print("==================")
-print("CONSULTA DE NOTAS")
+print("GRADE CONSULTANT")
 print("==================")
 
 while True:
-        nome = input("Digite o nome do aluno: ")
+        name = input("Enter the student's name: ")
         try:
-            pesquisar_aluno = float(input("Digite a nota do aluno: "))
-            if pesquisar_aluno < 0 or pesquisar_aluno > 10.1:
-                print("O número tem que ser maior que 0 e menor que 10, tente novamente!")
+            searchStudent = float(input("Enter the student's grade: "))
+            if searchStudent < 0 or searchStudent > 10.1:
+                print("The number must to be greater than 0 and less than 10, try again!")
                 continue
-            elif pesquisar_aluno < 5.1:
-                print(f'O aluno {nome} está reprovado por sua nota {pesquisar_aluno}!')
-            elif pesquisar_aluno < 7.1:
-                print(f'O aluno {nome} está em recuperação por sua nota {pesquisar_aluno}!')
+            elif searchStudent < 5.1:
+                print(f'The student {name} failed due to his {searchStudent} grade!')
+            elif searchStudent < 7.1:
+                print(f'The student {name} is in recovery due to his {searchStudent} grade!')
             else:
-                print(f'O aluno {nome} está aprovado por sua excelente nota {pesquisar_aluno}!')
+                print(f'The student {name} was approved based on his {searchStudent} grade!')
         except ValueError:
-            print('Digite um número válido!')
+            print('Enter a valid number!')
             continue
         
         while True:
-            denovo = input("Deseja pesquisar de novo? S/N: ").strip().upper()
-            if denovo in ["sim", "SIM", "S", "Si", "SI" "s"]:
+            tryAgain = input("Do you want to search again? Y/N: ").strip().upper()
+            if tryAgain in ["yes", "YES", "Y", "y"]:
                 break
-            elif denovo in ["Não", "Nao", "N", "No", "NO", "n"]:
+            elif tryAgain in ["N", "No", "NO", "n"]:
                 print("=============================================")
-                print("OBRIGADO POR UTILIZAR A CONSULTORA DE NOTAS!")
+                print("THANKS FOR USING THE GRADE CONSULTANT!")
                 print("=============================================")
                 exit()
             else:
-                (print("Resposta inválida! Digite SIM ou NÃO!"))
+                (print("Invalid Answer! Enter YES or NO!"))
                 continue
